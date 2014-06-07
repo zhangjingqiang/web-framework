@@ -1,0 +1,13 @@
+<% if @frameworks.present? %>
+  <div class="row">
+    <% @frameworks.each do |framework| %>
+      <div class="span4">
+        <h2><%= framework.try(:name) %></h2>
+        <p><%= image_tag(framework.try(:logo), :size => '100x100') %></p>
+        <p><a class="btn btn-default" href="<%= framework.try(:url) %>"><%= framework.try(:name) %> framework »</a></p>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  There is any framework yet.
+<% end %>
